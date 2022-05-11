@@ -1,0 +1,20 @@
+h1{
+    margin-top: 80px;
+}
+
+.items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.content{
+    span{
+        font-size: 15px;
+        margin-left: 10px;
+        cursor: pointer;
+        color: #2A5275;
+        img{
+            margin-left: 5px;
+        }
+    }
+}

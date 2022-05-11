@@ -1,0 +1,195 @@
+.header_wrapper{
+   display: flex;
+   flex-direction: column;
+
+
+
+
+
+
+
+.header_wrapper_info{
+    display: flex;
+    justify-content: space-between;
+   
+     div{
+         margin-left: 15px;
+     }
+    .logo{
+        cursor: pointer;
+        
+    }
+
+   
+
+    .icons{
+        display: flex;
+        cursor: pointer;
+        
+    }
+
+    .button{
+        padding: 20px 45px;
+        margin-left: 20px;
+        color: #ffff;
+        background-color: #2A5275;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500 medium;
+        transition: padding 0.1s ease-in-out;
+        div{
+            margin-left: 5px;
+        }
+
+    }
+
+    .search{
+        display: flex;
+        border-bottom: 1px solid ;
+        width: 150px;
+
+        input{
+            border: none;
+            padding: 5px;
+            outline: none;
+        }
+
+
+        
+     }
+}
+
+
+
+.menu{
+   background-color: #0E1821;
+   min-width: 1920px;
+   height: 60px;
+   width: 100%;
+   margin-top: 10px;
+   margin-left: -310px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   ul{
+      
+       display: flex;
+       list-style: none;
+       justify-content: space-between;
+       
+       & li:nth-child(2){
+           margin-left: 75px;
+       }
+
+
+       li{
+           color: #ffff;
+           display: flex;
+           cursor: pointer;
+           margin-left: 30px;
+           &:hover{
+               color: #2A5275;
+           }
+           
+           
+       }
+
+
+       .burger{
+           
+           margin-right: 90px;
+           margin-left: -150px;
+           display: flex;
+           
+      
+           span{
+               margin-left: 10px;
+               color: #2A5275;
+           }
+
+
+
+
+        
+       }
+   }
+    
+}
+
+  .menu_categories{
+    background-color: #EDF2F6;
+    width: 310px;
+    height:541px;
+    margin-left: 0px;
+    z-index: 10;
+    
+    ul{
+
+  
+    
+    li{
+        
+       display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        margin-top: 5px;
+        font-size: 16px;
+        padding:6px;
+        &:hover{
+            background-color: #2A5275;
+            color: #EDF2F6;
+            cursor: pointer;
+           
+        }
+
+        img{
+            margin-left: 0;
+            
+           
+            
+        }
+        span{
+            margin-left: 0;
+            
+           
+           
+           
+          
+           
+           
+        }
+    }
+}
+   
+    
+     
+      
+
+    
+  }
+
+
+.menu_wrapper{
+    display: flex;
+}
+
+.slider{
+    position: absolute;
+    top: 150px;
+    
+
+
+
+   
+
+}
+
+.slider_left{
+    position: absolute;
+    top: 150px;
+    left:650px;
+}
+
+
+}
