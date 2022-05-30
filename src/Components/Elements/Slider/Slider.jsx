@@ -50,7 +50,7 @@ const onHandlerRight = () => {
     
 
 }
-    console.log(offset)
+    
                
     
 useEffect(() => {

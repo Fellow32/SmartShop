@@ -8,6 +8,10 @@ h1{
     flex-wrap: wrap;
 }
 .content{
+
+    h1{
+        margin-left: 10px;
+    }
     span{
         font-size: 15px;
         margin-left: 10px;
@@ -18,3 +22,5 @@ h1{
         }
     }
 }
+
+

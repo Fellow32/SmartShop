@@ -1,0 +1,33 @@
+.news{
+    
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: space-between
+}
+.news_info{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 180px;
+    width: 635px;
+    background-color: #EDF2F6;
+    border-radius: 10px;
+    cursor: pointer;
+
+    h3{ margin-left: 20px;
+        color: #070C11;
+        font-size: 28px;
+        font-weight: 700;
+    }
+    span{
+         margin-top: -10px;
+        color: #070C11;
+        font-size:16px;
+        padding: 10px;
+        font-weight: 400;
+       
+        
+    }
+}

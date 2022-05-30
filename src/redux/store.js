@@ -1,17 +1,21 @@
 import { configureStore} from "@reduxjs/toolkit";
 import createSagaMiddleware from "@redux-saga/core";
-import itemsReducer from './reducers/itemsReducer'
-import itemsSaga from "./reducers/itemsSaga";
+import newItemsReducer from "./reducers/newItemsReducer/newItemsReducer";
+import {rootWatcher} from "../redux/reducers/index"
+
+import topSalesItemsReducer from "./reducers/topSalesReducer/topSalesItemsReducer";
+
 
 const sagaMiddleware = createSagaMiddleware()
 
 export const  store = configureStore({
     reducer :{
-        items:itemsReducer
+        newItems:newItemsReducer,
+        topSalesItems:topSalesItemsReducer
     },
     middleware: [sagaMiddleware]
 });
-sagaMiddleware.run(itemsSaga);
+sagaMiddleware.run(rootWatcher);
 
 
 

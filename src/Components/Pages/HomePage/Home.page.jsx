@@ -4,16 +4,29 @@ import style from "../HomePage/HomePage.module.scss"
 import Item from "../../Item/Item";
 import arrow from "../../../img/arrow.svg"
 import {useDispatch, useSelector} from 'react-redux'
-import { getItemsFetch } from "../../../redux/reducers/itemsReducer";
+import { getItemsFetch } from "../../../redux/reducers/newItemsReducer/newItemsReducer";
+import Promo from "../../Elements/Promo/Promo";
+import Footer from "../../Elements/Footer/Footer";
+import News from "../../Elements/News/News";
+import { getNewItemsFetch } from "../../../redux/reducers/newItemsReducer/newItemsReducer";
+import { getTopSalesItemsFetch} from "../../../redux/reducers/topSalesReducer/topSalesItemsReducer"
+
 
 const HomePage = () => {
 
-   const items = useSelector( state => state.items.items)
+   const newItems = useSelector( state => state.newItems.items)
+   const topItems = useSelector(state => state.topSalesItems.items)
    const dispatch = useDispatch()
+
+   console.log(topItems)
 
 
     useEffect(() => {
-        dispatch(getItemsFetch())
+        dispatch(getNewItemsFetch())
+    },[dispatch])
+
+    useEffect(() => {
+        dispatch(getTopSalesItemsFetch())
     },[dispatch])
 
     
@@ -29,7 +42,7 @@ const HomePage = () => {
           <div className={style.items}>
           
 
-          {items.map((el) => (
+          {topItems.map((el) => (
               <Item 
               name = {el.name}
               img = {el.img}
@@ -42,15 +55,40 @@ const HomePage = () => {
               />
           ))}
           
-
           </div>
 
+            <Promo/>
 
+          <h1>Новинки <span>Все товары <img src={arrow} alt="arrow" /></span></h1>
+             
+          <div className={style.items}>
+          {newItems.map((el) => (
+              <Item 
+              name = {el.name}
+              img = {el.img}
+              rating = {el.rating}
+              comments = {el.comments}
+              currentPrice = {el.currentPrice}
+              oldPrice = {el.oldPrice}
+              
+              
+              />
+          ))}
+          </div>
+
+                  
+              <h1>Новости <span>Все новости <img src={arrow} alt="arrow" /></span></h1>
+
+               <News/>
         
-       
+            
+
+
 
          </div>
-      
+       
+
+       <Footer/>
         
         </div>
     )
