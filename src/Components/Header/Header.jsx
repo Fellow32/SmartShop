@@ -1,10 +1,4 @@
 import React, { useState } from "react";
-import logo from '../../img/logo.svg'
-import eye from  '../../img/eye.svg'
-import favorite from  '../../img/favorite.svg'
-import compare from  '../../img/compare.svg'
-import cart from  '../../img/cart.svg'
-import search_icon from  '../../img/search-icon.svg'
 import style from './Header.module.scss'
 import menu_icon from '../../img/menu-icon.svg'
 import icon1 from '../../img/menu/icon1.svg'
@@ -19,6 +13,7 @@ import icon9 from '../../img/menu/icon9.svg'
 import icon10 from '../../img/menu/icon10.svg'
 import icon11 from '../../img/menu/icon11.svg'
 import Slider from "../Elements/Slider/Slider";
+import HeaderInfo from "../Elements/HeaderInfo/HeaderInfo";
 
 
 
@@ -33,85 +28,14 @@ import Slider from "../Elements/Slider/Slider";
 const Header = () => {
 
 
-  const [activeMenu, setActiveMenu] = useState(false)
-
-  const showMenu = () => {
-    setActiveMenu(!activeMenu)
-  }
-
-
-
-
-
      return (
 
           <div className={style.header_wrapper}>
 
       
-  
 
 
-         <div className={style.header_wrapper_info}>
-
-
-
-           <div className={style.logo}>
-             <img width={184} height={60} src={logo} alt="logo" />
-             
-           </div>
-
-           <div >
-             <span>+7 (812) 660-50-54</span>
-           </div>
-           <div>
-           <span>+7 (958) 111-95-03</span>
-           </div>
-           <div>
-             <span>Пн-вс: с 10:00 до 21:00</span>
-           </div>
-
-           <div>
-             <div className={style.search}>
-                 <img src={search_icon} alt="search" />
-                 <input type="text" placeholder="Поиск" />
-             </div>
-
-             </div>
-             
-
-
-
-
-
-             <div className={style.icons}>
-
-
-        
-           <div>
-             <img width={48} height={48} src={eye} alt="eye" />
-           </div>
-
-           <div>
-              <img width={48} height={48} src={favorite} alt="favorite" />
-           </div>
-           <div>
-              <img width={48} height={48} src={compare} alt="compare" />
-           </div>
-
-           <div>
-
-             <img width={48} height={48} src={cart} alt="cart" />
-           </div>
-
-           <div className={style.button}>
-             <div>Войти</div>
-           </div>
-
-
-           </div>
-           </div>
-
-
+     <HeaderInfo/>
 
 
 
@@ -128,7 +52,7 @@ const Header = () => {
                 <ul>
 
 
-                  <li onClick={showMenu} className={style.burger}>
+                  <li  className={style.burger}>
                     
                     <img src={menu_icon} alt='menu_icon'/>
                     <span>Каталог товаров</span>

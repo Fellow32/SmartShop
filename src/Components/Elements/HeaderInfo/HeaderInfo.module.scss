@@ -1,0 +1,50 @@
+.header_wrapper_info{
+    display: flex;
+    justify-content: space-between;
+   
+     div{
+         margin-left: 15px;
+     }
+    .logo{
+        cursor: pointer;
+        
+    }
+
+   
+
+    .icons{
+        display: flex;
+        cursor: pointer;
+        
+    }
+
+    .button{
+        padding: 20px 45px;
+        margin-left: 20px;
+        color: #ffff;
+        background-color: #2A5275;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500 medium;
+        transition: padding 0.1s ease-in-out;
+        div{
+            margin-left: 5px;
+        }
+
+    }
+
+    .search{
+        display: flex;
+        border-bottom: 1px solid ;
+        width: 150px;
+
+        input{
+            border: none;
+            padding: 5px;
+            outline: none;
+        }
+
+
+        
+     }
+}

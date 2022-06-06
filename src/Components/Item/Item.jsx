@@ -5,6 +5,8 @@ import commentsImg from "../../img/items/comments.svg"
 import favorite_false from "../../img/items/favorite_false.svg"
 import compare_false from "../../img/items/compare_false.svg"
 import Rating from "../Elements/Rating/Rating";
+import { useDispatch, useSelector } from "react-redux";
+import addItemInCart from "../../redux/reducers/cartItemsReducer/cartItemsReducer.js"
 
 
 
@@ -12,11 +14,20 @@ import Rating from "../Elements/Rating/Rating";
 
 
 
+const Item = ({name,comments,rating,oldPrice,currentPrice,img,onAddToCart}) => {
 
 
-const Item = ({name,comments,rating,oldPrice,currentPrice,img}) => {
 
-console.log(img)
+  const dispatch = useDispatch()
+
+
+ const addItem = () => {
+       onAddToCart({name,currentPrice,img})
+   
+ }
+
+ 
+
 
     return (
         
@@ -67,7 +78,7 @@ console.log(img)
 
           <div className={style.buttons}>
               <div>Купить в 1 клик</div>
-              <img height={48} width={48} src={cart}alt="cart" />
+              <img onClick = {addItem} height={48} width={48} src={cart}alt="cart" />
 
           </div>
 

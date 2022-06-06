@@ -1,0 +1,51 @@
+h2{
+    margin-top: 50px;
+}
+
+.item_wrapper {
+    padding-bottom:40px;
+    margin-left: -30px;
+    width: 860px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+   
+    
+}
+
+.name{
+    width: 280px;
+    
+}
+
+.img{
+    margin-left: 55px;
+}
+
+.counter{
+    display: flex;
+    .count{
+        margin: 15px;
+        padding: 10px 15px;
+        border: 1px solid #C8CACB;
+        border-radius: 5px;
+    }
+    span{
+        font-size: 30px;
+        cursor: pointer;
+        color: #C8CACB;
+        &:hover{
+            color: black;
+        }
+    }
+}
+
+.price{
+    font-size: 24px;
+    font-weight: 700;
+}
+.delete_img{
+    cursor: pointer;
+}
+

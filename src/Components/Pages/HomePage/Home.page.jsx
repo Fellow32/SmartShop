@@ -10,6 +10,7 @@ import Footer from "../../Elements/Footer/Footer";
 import News from "../../Elements/News/News";
 import { getNewItemsFetch } from "../../../redux/reducers/newItemsReducer/newItemsReducer";
 import { getTopSalesItemsFetch} from "../../../redux/reducers/topSalesReducer/topSalesItemsReducer"
+import { addItemInCart} from "../../../redux/reducers/cartItemsReducer/cartItemsReducer";
 
 
 const HomePage = () => {
@@ -18,7 +19,7 @@ const HomePage = () => {
    const topItems = useSelector(state => state.topSalesItems.items)
    const dispatch = useDispatch()
 
-   console.log(topItems)
+
 
 
     useEffect(() => {
@@ -29,7 +30,13 @@ const HomePage = () => {
         dispatch(getTopSalesItemsFetch())
     },[dispatch])
 
-    
+    const add = (obj) => {
+        dispatch(addItemInCart(obj))
+      
+        
+    }
+
+  
 
 
     return (
@@ -50,6 +57,12 @@ const HomePage = () => {
               comments = {el.comments}
               currentPrice = {el.currentPrice}
               oldPrice = {el.oldPrice}
+              onAddToCart = {(item) => add(item)}
+           
+              
+            
+            
+            
               
               
               />
