@@ -48,3 +48,38 @@
         
      }
 }
+.itemsInCartCount{
+    background-color: #2A5275;
+    padding: 12px;
+    position:absolute;
+    border-radius: 50%;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    right: 502px;
+    font-size: 12px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+}
+
+
+.itemsInCartCount_hidden{
+    background-color: #2A5275;
+    padding: 12px;
+    position:absolute;
+    border-radius: 50%;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    right: 502px;
+    font-size: 12px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}

@@ -25,7 +25,7 @@ const Cart = () => {
   
      useEffect(() => {
          dispatch(getCartItemsFetch())
-     },[dispatch])
+     },[])
 
  
      

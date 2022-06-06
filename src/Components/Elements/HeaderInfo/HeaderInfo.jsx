@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import logo from '../../../img/logo.svg'
 import eye from  '../../../img/eye.svg'
 import favorite from  '../../../img/favorite.svg'
@@ -7,10 +7,19 @@ import cart from  '../../../img/cart.svg'
 import search_icon from  '../../../img/search-icon.svg'
 import style from '../HeaderInfo/HeaderInfo.module.scss'
 import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { getCartItemsFetch } from "../../../redux/reducers/cartItemsReducer/cartItemsReducer"
 
 
 
 const HeaderInfo = () => {
+  const itemsInCartCount = useSelector(state=> state.cartItems.totalCount)
+  
+
+
+
+
+
     return (
         <div className={style.header_wrapper_info}>
 
@@ -63,6 +72,11 @@ const HeaderInfo = () => {
       
           <Link to='/cart'> 
           <div>
+              
+             <div className={ `${itemsInCartCount > 0 ? style.itemsInCartCount :style.itemsInCartCount_hidden } ` }>
+                  {itemsInCartCount}
+                </div>
+             
           <img width={48} height={48} src={cart} alt="cart" /> 
           </div>
            </Link>     

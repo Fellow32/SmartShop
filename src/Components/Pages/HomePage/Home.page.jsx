@@ -10,13 +10,14 @@ import Footer from "../../Elements/Footer/Footer";
 import News from "../../Elements/News/News";
 import { getNewItemsFetch } from "../../../redux/reducers/newItemsReducer/newItemsReducer";
 import { getTopSalesItemsFetch} from "../../../redux/reducers/topSalesReducer/topSalesItemsReducer"
-import { addItemInCart} from "../../../redux/reducers/cartItemsReducer/cartItemsReducer";
+import { addItemInCart, getCartItemsFetch} from "../../../redux/reducers/cartItemsReducer/cartItemsReducer";
 
 
 const HomePage = () => {
 
    const newItems = useSelector( state => state.newItems.items)
    const topItems = useSelector(state => state.topSalesItems.items)
+   const itemsInCartCount = useSelector(state=> state.cartItems.totalCount)
    const dispatch = useDispatch()
 
 
@@ -29,6 +30,14 @@ const HomePage = () => {
     useEffect(() => {
         dispatch(getTopSalesItemsFetch())
     },[dispatch])
+
+    useEffect(() => {
+        dispatch(getCartItemsFetch())
+    },[dispatch,itemsInCartCount])
+
+
+
+
 
     const add = (obj) => {
         dispatch(addItemInCart(obj))

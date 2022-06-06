@@ -11,19 +11,6 @@ function* getCartItemsWorker () {
 }
 
 
-// function*  postItemInCartWorker () {
-//      yield call (fetch("https://6294732ca7203b3ed06939e5.mockapi.io/cart",{
-//             method:'POST',
-//             body:
-            
-//      }))
-
-     
-// }
-
-
-
-
 
 export function* cartItemsWatcher () {
      yield takeEvery ("cart_items/getCartItemsFetch", getCartItemsWorker)

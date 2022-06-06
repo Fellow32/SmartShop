@@ -5,8 +5,7 @@ import commentsImg from "../../img/items/comments.svg"
 import favorite_false from "../../img/items/favorite_false.svg"
 import compare_false from "../../img/items/compare_false.svg"
 import Rating from "../Elements/Rating/Rating";
-import { useDispatch, useSelector } from "react-redux";
-import addItemInCart from "../../redux/reducers/cartItemsReducer/cartItemsReducer.js"
+
 
 
 
@@ -18,10 +17,12 @@ const Item = ({name,comments,rating,oldPrice,currentPrice,img,onAddToCart}) => {
 
 
 
-  const dispatch = useDispatch()
+  
+   
 
 
  const addItem = () => {
+       
        onAddToCart({name,currentPrice,img})
    
  }
