@@ -3,7 +3,7 @@ import HeaderInfo from "../../../Elements/HeaderInfo/HeaderInfo";
 import CartItem from "../CartItem/CartItem";
 import style from '../Cart/Cart.module.scss';
 import { useDispatch, useSelector } from "react-redux";
-import { getCartItemsFetch,removeItem,removeItemFromCart} from "../../../../redux/reducers/cartItemsReducer/cartItemsReducer";
+import { getCartItemsFetch,getFullPrice,removeItem,removeItemFromCart} from "../../../../redux/reducers/cartItemsReducer/cartItemsReducer";
 import EmptyCart from "../../../Elements/CartElements/EmptyCart";
 
 
@@ -12,12 +12,19 @@ const Cart = () => {
     const cartItems = useSelector(state => state.cartItems.items)
     const fullPrice = useSelector(state => state.cartItems.price)
     const totalCount = useSelector(state => state.cartItems.totalCount)
-     const dispatch = useDispatch()
+    const dispatch = useDispatch()
+
+    
+
 
 
      const remove = (id) => {
         
         dispatch(removeItemFromCart(id))
+        
+        
+
+        
         
    
   }
@@ -25,24 +32,12 @@ const Cart = () => {
   
      useEffect(() => {
          dispatch(getCartItemsFetch())
+        // setTimeout(() => {
+        //     dispatch(getFullPrice())
+        // },500) 
      },[])
 
  
-     
-  
- 
-       
-
-
- 
-
-
-
-
-
-
-
-
 
     return (
 
@@ -56,19 +51,6 @@ const Cart = () => {
 
                
                <HeaderInfo/>
-
-
-
-
-
-
-
-
-
-
-
-
-                  
 
                         { cartItems.length !== 0
 
@@ -91,6 +73,8 @@ const Cart = () => {
                                       img = {el.img}
                                       name = {el.name}
                                       price = {el.currentPrice}
+                                      amount = {el.amount}
+                                      
                                       onRemoveFromCart = {(id) => remove (id)} 
                                       
                                       

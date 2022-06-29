@@ -1,0 +1,108 @@
+h2{
+    font-size: 18px;
+    font-weight: 400;
+    color: #070C11;
+    span{
+        color: #838688;
+        margin-left: 10px;
+    }
+}
+
+li{
+    list-style: none;
+}
+
+
+.wrapper{
+    width: 420px;
+    height: 512px;
+    margin: 0;
+    padding: 10px;
+    background-color: #eaf0f5;
+    border-radius: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    li{
+        display: flex;
+        flex-direction: column;
+        margin-left:-10px;
+        width: 420px;
+        padding: 10px;
+      
+
+        span{
+            
+            margin-left: 30px;
+        }
+
+        span:nth-child(2n){
+           font-size: 24px;
+           margin-top: 8px;
+           color: #2A5275;
+        }
+
+      
+    }
+}
+
+.line{
+    border: 1px solid #C8CACB;
+    width: 360px;
+}
+.mail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        margin-bottom: 11px;
+    }
+    
+}
+.worktime{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 25px;
+   span{
+       margin-bottom: 10px;
+   }
+ 
+}
+
+h2:hover{
+    cursor: pointer;
+    span:hover{
+        cursor: default;
+        
+    }
+ 
+    
+}
+
+.link{
+    
+        text-decoration: none;
+    
+}
+.map{
+    
+  
+  margin: 0px 0px 0px 20px;
+
+}
+
+h1{
+    margin-top: 20px;
+}
+.content{
+    margin-top: -10px;
+}
+

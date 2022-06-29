@@ -158,7 +158,16 @@
             margin-right:18px;
             &:hover{
                 color: #4878A6 darken($color: #4878a6, $amount: 5);
+                transform: scale(1.5) ;
             }
         }
+    }
+}
+
+
+.favorite{
+    &:hover{
+        background-image: url('../../img/items/favorite_true.svg');
+        transform: scale(1.2);
     }
 }

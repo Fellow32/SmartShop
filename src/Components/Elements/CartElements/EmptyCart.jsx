@@ -13,7 +13,7 @@ const EmptyCart = () => {
         <div className={style.empty_cart}>
                  <img src={emptyCart} alt="" />
 
-               <Link to='/'> 
+               <Link style={{textDecoration:'none', color:'#2A5275'}} to='/'> 
                <h3> 
                Вернуться к покупкам 
                </h3>

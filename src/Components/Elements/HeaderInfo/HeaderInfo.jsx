@@ -59,14 +59,17 @@ const HeaderInfo = () => {
 
      
         <div>
-          <img width={48} height={48} src={eye} alt="eye" />
+          <img className={style.elements} width={48} height={48} src={eye} alt="eye" />
         </div>
 
+          <Link to = '/favorite'>
         <div>
-           <img width={48} height={48} src={favorite} alt="favorite" />
+           <img className={style.elements} width={48} height={48} src={favorite} alt="favorite" />
         </div>
+        </Link>
+
         <div>
-           <img width={48} height={48} src={compare} alt="compare" />
+           <img className={style.elements} width={48} height={48} src={compare} alt="compare" />
         </div>
 
       
@@ -77,7 +80,7 @@ const HeaderInfo = () => {
                   {itemsInCartCount}
                 </div>
              
-          <img width={48} height={48} src={cart} alt="cart" /> 
+          <img className={style.elements}  width={48} height={48} src={cart} alt="cart" /> 
           </div>
            </Link>     
           

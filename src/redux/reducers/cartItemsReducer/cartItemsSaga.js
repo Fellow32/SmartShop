@@ -18,6 +18,11 @@ export function* cartItemsWatcher () {
 
 
 
+
+
+
+
+
 // export function* postItemInCartWatcher () {
 //      yield takeEvery("cart_items/addItemInCart", postItemInCartWorker)
 // }

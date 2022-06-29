@@ -4,13 +4,14 @@ import style from "../HomePage/HomePage.module.scss"
 import Item from "../../Item/Item";
 import arrow from "../../../img/arrow.svg"
 import {useDispatch, useSelector} from 'react-redux'
-import { getItemsFetch } from "../../../redux/reducers/newItemsReducer/newItemsReducer";
-import Promo from "../../Elements/Promo/Promo";
 import Footer from "../../Elements/Footer/Footer";
 import News from "../../Elements/News/News";
 import { getNewItemsFetch } from "../../../redux/reducers/newItemsReducer/newItemsReducer";
 import { getTopSalesItemsFetch} from "../../../redux/reducers/topSalesReducer/topSalesItemsReducer"
 import { addItemInCart, getCartItemsFetch} from "../../../redux/reducers/cartItemsReducer/cartItemsReducer";
+import { useLocation } from "react-router-dom";
+import Stock from "../../Elements/Stock/Stock";
+import { getItemsInFavorite } from "../../../redux/reducers/favoriteItemsReducer/favoriteItemsSlice";
 
 
 const HomePage = () => {
@@ -18,7 +19,11 @@ const HomePage = () => {
    const newItems = useSelector( state => state.newItems.items)
    const topItems = useSelector(state => state.topSalesItems.items)
    const itemsInCartCount = useSelector(state=> state.cartItems.totalCount)
+   const itemsInFavorite = useSelector(state => state.favoriteItems.items)
    const dispatch = useDispatch()
+
+
+   
 
 
 
@@ -36,23 +41,28 @@ const HomePage = () => {
     },[dispatch,itemsInCartCount])
 
 
+    useEffect(() => {
+        dispatch(getItemsInFavorite())
+    },[dispatch])
 
 
 
-    const add = (obj) => {
-        dispatch(addItemInCart(obj))
-      
-        
-    }
 
+
+ 
+
+
+    
   
 
+    
 
     return (
         <div>
       <Header/>
          
-         <div className={style.content}>
+
+          <div className={style.content}>
          <h1>Хиты продаж  <span>Все товары <img src={arrow} alt="arrow" /></span></h1>
 
           <div className={style.items}>
@@ -66,7 +76,8 @@ const HomePage = () => {
               comments = {el.comments}
               currentPrice = {el.currentPrice}
               oldPrice = {el.oldPrice}
-              onAddToCart = {(item) => add(item)}
+              amount = {1}
+             
            
               
             
@@ -79,7 +90,7 @@ const HomePage = () => {
           
           </div>
 
-            <Promo/>
+            <Stock/>
 
           <h1>Новинки <span>Все товары <img src={arrow} alt="arrow" /></span></h1>
              
@@ -108,8 +119,12 @@ const HomePage = () => {
 
 
          </div>
-       
+         
 
+       
+         
+       
+    
        <Footer/>
         
         </div>

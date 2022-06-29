@@ -14,136 +14,84 @@ import icon10 from '../../img/menu/icon10.svg'
 import icon11 from '../../img/menu/icon11.svg'
 import Slider from "../Elements/Slider/Slider";
 import HeaderInfo from "../Elements/HeaderInfo/HeaderInfo";
-
-
-
-
-
-
-
-
+import { Link, useLocation } from "react-router-dom";
 
 
 
 const Header = () => {
 
+     const location = useLocation()
+     
 
      return (
 
           <div className={style.header_wrapper}>
 
-      
-
-
      <HeaderInfo/>
-
-
-
-
-
-
-
 
            <div className={style.menu}>
 
                 <div>
-                  
-                 
+                   
                 <ul>
-
 
                   <li  className={style.burger}>
                     
                     <img src={menu_icon} alt='menu_icon'/>
+                    
                     <span>Каталог товаров</span>
-                    
-                  
-
-                
+                                   
                   </li>
-
-
-
+                  <Link className={style.link} to ='/about'>
                   <li>О Компании</li>
+                  </Link>
+                  <Link className={style.link} to='/promo'>
                   <li>Акции</li>
+                  </Link> 
+                  <Link className={style.link} to='/installment'>
                   <li>Рассрочка 0|0|18</li>
-                  <li>Сервис и Гарантия</li>
-                  <li>Опт/ дропшиппинг</li>
-                  <li>Контакты</li>
+                  </Link>                 
+                   <Link className={style.link} to ='/service'>
+                   <li>Сервис и Гарантия</li>
+                   </Link>
+                    <Link className={style.link} to ='/wholesale'>
+                    <li>Опт/ дропшиппинг</li>
+                    </Link>
+                   
+                 <Link  className={style.link} to ='/contacts'>
+                 <li>Контакты</li>
+                 </Link>
+      
                 </ul>
-                </div>  
-
-
-                 
-                <Slider />
-
-                    
-              
-               
-               
-
-
-                
-
+                </div>     
            </div>
-          
-                
 
-                
-                 
-               
-                 <div className={style.menu_categories}>
-                  <ul >
-                        <li><img src={icon1} alt="icon1" /><span>Гироскутеры</span></li>
-                        <li><img src={icon2} alt="icon2" /><span>Электросамокаты</span></li>
-                        <li><img src={icon3} alt="icon3" /><span>Моноколеса</span></li>
-                        <li><img src={icon4} alt="icon4" /><span>Сигвеи и мини-сигвеи</span></li>
-                        <li><img src={icon5} alt="icon5" /><span>Электроскутеры</span></li>
-                        <li><img src={icon6} alt="icon6" /><span>Электровелосипеды</span></li>
-                        <li><img src={icon7} alt="icon7" /><span>Электроскейты</span></li>
-                        <li><img src={icon8} alt="icon8" /><span>Электромобили</span></li>
-                        <li><img src={icon9} alt="icon9" /><span>Аксессуары</span></li>
-                        <li><img src={icon10} alt="icon10" /><span>Умные игрушки</span></li>
-                        <li><img src={icon11} alt="icon11" /><span>Smart Watch</span></li>
-                      </ul>
+
     
-               </div>
-              
-
-
-               
-          
-
-
-               
+     { location.pathname == '/'
+     ? <>
+     <Slider/>
+     <div className={style.menu_categories}>
+      <ul > 
+            <Link className={style.link} to= '/catalog/hoverboards'>
+            <li ><img src={icon1} alt="icon1" /><span>Гироскутеры</span></li>
+            </Link>
+            <li><img src={icon2} alt="icon2" /><span>Электросамокаты</span></li>
+            <li><img src={icon3} alt="icon3" /><span>Моноколеса</span></li>
+            <li><img src={icon4} alt="icon4" /><span>Сигвеи и мини-сигвеи</span></li>
+            <li><img src={icon5} alt="icon5" /><span>Электроскутеры</span></li>
+            <li><img src={icon6} alt="icon6" /><span>Электровелосипеды</span></li>
+            <li><img src={icon7} alt="icon7" /><span>Электроскейты</span></li>
+            <li><img src={icon8} alt="icon8" /><span>Электромобили</span></li>
+            <li><img src={icon9} alt="icon9" /><span>Аксессуары</span></li>
+            <li><img src={icon10} alt="icon10" /><span>Умные игрушки</span></li>
+            <li><img src={icon11} alt="icon11" /><span>Smart Watch</span></li>
+          </ul>
      
-
-
-
-
-           
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     </div>
+     </>  
+     :''
+}
          </div>
      )
 }

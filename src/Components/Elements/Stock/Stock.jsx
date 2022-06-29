@@ -1,10 +1,10 @@
 import React from "react";
-import style from "../Promo/Promo.module.scss"
+import style from "../Stock/Stock.module.scss"
 import promo1 from "../../../img/promo/promo1.png"
 import promo2 from "../../../img/promo/promo2.png"
 
 
-const Promo = () => {
+const Stock= () => {
     return (
           
         <div className={style.promo}>
@@ -24,4 +24,4 @@ const Promo = () => {
 
 
 
-export default Promo
+export default Stock

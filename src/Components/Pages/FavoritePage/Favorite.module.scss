@@ -1,0 +1,32 @@
+h2{
+    font-size: 18px;
+    font-weight: 400;
+    color: #070C11;
+    span{
+        color: #838688;
+        margin-left: 10px;
+    }
+}
+
+
+h2:hover{
+    cursor: pointer;
+    span:hover{
+        cursor: default;
+        
+    }
+ 
+    
+}
+
+.link{
+    
+        text-decoration: none;
+    
+}
+
+.items{
+    display: flex;
+    flex-wrap: wrap;
+}
+

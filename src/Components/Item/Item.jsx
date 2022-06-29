@@ -3,29 +3,62 @@ import style from '../Item/Item.module.scss'
 import cart  from "../../img/items/cart.svg"
 import commentsImg from "../../img/items/comments.svg"
 import favorite_false from "../../img/items/favorite_false.svg"
+import favorite_true from "../../img/items/favorite_true.svg"
 import compare_false from "../../img/items/compare_false.svg"
-import Rating from "../Elements/Rating/Rating";
+import Rating from '../Elements/Rating/Rating'
+import { addItemInCart } from "../../redux/reducers/cartItemsReducer/cartItemsReducer";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useRef } from "react";
+import { addItemInFavorite, removeFromFavorite } from "../../redux/reducers/favoriteItemsReducer/favoriteItemsSlice";
 
 
 
 
-
-
-
-
-const Item = ({name,comments,rating,oldPrice,currentPrice,img,onAddToCart}) => {
-
-
-
-  
+const Item = (obj) => {
+const dispatch = useDispatch()
+const isMounted = useRef(false)
    
 
 
- const addItem = () => {
+ const addInCart = () => {
        
-       onAddToCart({name,currentPrice,img})
-   
+       dispatch(addItemInCart(obj))
+       
+       console.log(obj)
  }
+
+
+  const addInFavorite = () => {
+       dispatch(addItemInFavorite(obj))
+
+  }
+
+  const onRemoveItemFromFavorite = () => {
+    dispatch(removeFromFavorite(obj.name))
+  }
+
+   
+
+
+
+useEffect(() => {
+    if( isMounted.current){
+        addInFavorite()
+    }
+ 
+  isMounted.current = true
+},[])
+
+
+
+
+
+
+
+
+
+
 
  
 
@@ -38,22 +71,23 @@ const Item = ({name,comments,rating,oldPrice,currentPrice,img,onAddToCart}) => {
 
                  
                 <div className={style.header}>
-                    <img src={img} alt="img" />
+                    <img src={obj.img} alt="img" />
                     <span>Сигвеи</span>
-                    <h2>{name}</h2>
+                    <h2>{obj.name}</h2>
                 </div>
                 <div>
+                    
                     <div className={style.rating}>
-                        <Rating rating ={rating}/>
+                        <Rating rating ={obj.rating}/>
                         <img src={commentsImg} alt="comments" />
-                        <span>{comments}</span>
+                        <span>{obj.comments}</span>
                     </div>
                 </div>
                 <div>
                     <div className={style.price_wrapper}>
                        
-                    <span>{oldPrice} ₽</span>
-                    <span>{currentPrice} ₽</span>
+                    <span>{obj.oldPrice} ₽</span>
+                    <span>{obj.currentPrice} ₽</span>
                     </div>
                     <div className={style.price_info}>
 
@@ -64,9 +98,9 @@ const Item = ({name,comments,rating,oldPrice,currentPrice,img,onAddToCart}) => {
                     </div>
 
                    
-                    <div>
-                        <img src={favorite_false} alt="favorite" />
-                        <img src={compare_false} alt="compare" />
+                    <div className={style.favorite_compare}>
+                        <img onClick={addInFavorite} className={style.favorite} src={obj.isFavorite ? favorite_true : favorite_false} alt="favorite" />
+                        <img onClick={onRemoveItemFromFavorite} className={style.compare} src={compare_false} alt="compare" />
                     </div>
                     </div>
                 </div>
@@ -79,7 +113,7 @@ const Item = ({name,comments,rating,oldPrice,currentPrice,img,onAddToCart}) => {
 
           <div className={style.buttons}>
               <div>Купить в 1 клик</div>
-              <img onClick = {addItem} height={48} width={48} src={cart}alt="cart" />
+              <img onClick = {addInCart} height={48} width={48} src={cart}alt="cart" />
 
           </div>
 
