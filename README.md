@@ -2,7 +2,7 @@
  Redux Toolkit/
  Redux Thunk/
  Redux Saga/
-MockAPI/
+ MockAPI
 
 
 
