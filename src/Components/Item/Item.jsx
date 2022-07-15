@@ -25,7 +25,7 @@ const isMounted = useRef(false)
        
        dispatch(addItemInCart(obj))
        
-       console.log(obj)
+       
  }
 
 

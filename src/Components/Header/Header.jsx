@@ -38,8 +38,10 @@ const Header = () => {
                   <li  className={style.burger}>
                     
                     <img src={menu_icon} alt='menu_icon'/>
+                      <Link className={style.link} to='/'>
+                      <span>Каталог товаров</span>
+                      </Link>
                     
-                    <span>Каталог товаров</span>
                                    
                   </li>
                   <Link className={style.link} to ='/about'>
@@ -76,16 +78,37 @@ const Header = () => {
             <Link className={style.link} to= '/catalog/hoverboards'>
             <li ><img src={icon1} alt="icon1" /><span>Гироскутеры</span></li>
             </Link>
-            <li><img src={icon2} alt="icon2" /><span>Электросамокаты</span></li>
-            <li><img src={icon3} alt="icon3" /><span>Моноколеса</span></li>
-            <li><img src={icon4} alt="icon4" /><span>Сигвеи и мини-сигвеи</span></li>
-            <li><img src={icon5} alt="icon5" /><span>Электроскутеры</span></li>
-            <li><img src={icon6} alt="icon6" /><span>Электровелосипеды</span></li>
-            <li><img src={icon7} alt="icon7" /><span>Электроскейты</span></li>
-            <li><img src={icon8} alt="icon8" /><span>Электромобили</span></li>
-            <li><img src={icon9} alt="icon9" /><span>Аксессуары</span></li>
-            <li><img src={icon10} alt="icon10" /><span>Умные игрушки</span></li>
-            <li><img src={icon11} alt="icon11" /><span>Smart Watch</span></li>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon2} alt="icon2" /><span>Электросамокаты</span></li>
+             </Link>
+            
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon3} alt="icon2" /><span>Моноколеса</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon4} alt="icon2" /><span>Сигвеи и мини-сигвеи</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon5} alt="icon2" /><span>Электроскутеры</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon6} alt="icon2" /><span>Электровелосипеды</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon7} alt="icon2" /><span>Электроскейты</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon8} alt="icon2" /><span>Электромобили</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon9} alt="icon2" /><span>Аксессуары</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon10} alt="icon2" /><span>Умные игрушки</span></li>
+             </Link>
+             <Link className={style.link} to= '/catalog/hoverboards'>
+             <li><img src={icon11} alt="icon2" /><span>Smart Watch</span></li>
+             </Link>
           </ul>
      
      </div>

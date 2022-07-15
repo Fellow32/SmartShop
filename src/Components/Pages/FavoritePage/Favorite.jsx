@@ -49,7 +49,7 @@ const Favorite = () => {
               ? itemsInFavorite.map((el) => (
 
                <Item
-               
+               key = {el.id}
                name = {el.name}
                rating = { el.rating}
                img = {el.img}

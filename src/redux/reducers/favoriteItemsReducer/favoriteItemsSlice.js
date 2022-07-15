@@ -27,7 +27,7 @@ const favoriteItemsSlice = createSlice({
             state.items = data.flat()
           }
          
-          console.log(state.items.length)
+          
           
 
           

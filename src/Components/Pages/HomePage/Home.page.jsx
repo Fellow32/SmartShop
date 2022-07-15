@@ -70,6 +70,7 @@ const HomePage = () => {
 
           {topItems.map((el) => (
               <Item 
+              key= {el.id}
               name = {el.name}
               img = {el.img}
               rating = {el.rating}
@@ -97,6 +98,7 @@ const HomePage = () => {
           <div className={style.items}>
           {newItems.map((el) => (
               <Item 
+              key= {el.id}
               name = {el.name}
               img = {el.img}
               rating = {el.rating}
