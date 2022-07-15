@@ -1,8 +1,8 @@
-React
-Redux Toolkit
-Redux Thunk
-Redux Saga
-MockAPI
+React/
+Redux Toolkit/
+Redux Thunk/
+Redux Saga/
+MockAPI/
 
 
 
