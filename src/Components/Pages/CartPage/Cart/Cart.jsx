@@ -32,9 +32,7 @@ const Cart = () => {
   
      useEffect(() => {
          dispatch(getCartItemsFetch())
-        // setTimeout(() => {
-        //     dispatch(getFullPrice())
-        // },500) 
+     
      },[])
 
  
